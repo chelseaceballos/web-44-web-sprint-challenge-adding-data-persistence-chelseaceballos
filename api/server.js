@@ -13,7 +13,7 @@ server.use('/api/resources', resourcesRouter)
 server.use('/api/tasks', taskRouter)
 
 // catch all
-server.use('*', (req,res, next) => {
+server.use('*', (req,res) => {
     res.json({message: "Page Not Found"})
 })
 
