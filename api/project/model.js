@@ -1,7 +1,8 @@
 // build your `Project` model here
+const db = require('../../data/dbConfig')
 
 function getAll() {
-    return Promise.resolve('very cool project')
+    return db('projects')
 }
 
 module.exports = {
