@@ -1,13 +1,16 @@
 // build your `/api/projects` router here
 const router = require('express').Router()
-
+const Project = require('./model')
 //  [GET] /api/projects
 // Even though project_completed is stored as an integer, the API uses booleans when interacting with the client
 // Example of response body: [{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]
-router.get('/', async (req,res, next) => {
-    res.json('gets projects')
-})
-
+router.get('/',  (req, res, next) => {
+    Project.getAll()
+    .then(proj => {
+        res.status(200).json(proj)
+    })
+    .catch(next)
+ });
 
 // [POST] /api/projects
 // Even though project_completed is stored as an integer, the API uses booleans when interacting with the client

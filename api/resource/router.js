@@ -1,11 +1,15 @@
 // build your `/api/resources` router here
 const router = require('express').Router()
-
+const Resource = require('./model')
 //  [GET] /api/resources
 // Example of response body: [{"resource_id":1,"resource_name":"foo","resource_description":null}]
-router.get('/', async (req, res, next) => {
-    res.json(' gets resources ')
-})
+router.get('/',  (req, res, next) => {
+    Resource.getAll()
+    .then(resources => {
+        res.status(200).json(resources)
+    })
+    .catch(next)
+ });
 
 // [POST] /api/resources
 // Example of response body: {"resource_id":1,"resource_name":"foo","resource_description":null}
