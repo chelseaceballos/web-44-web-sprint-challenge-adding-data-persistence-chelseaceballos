@@ -31,14 +31,14 @@ exports.up = async function(knex) {
             .notNullable()
             .references('resource_id')
             .inTable('resources')
-            .onDelete('CASCADE')
-            .onUpdate('CASCADE') 
+            .onDelete('RESTRICT')
+            .onUpdate('RESTRICT') 
         table.integer('project_id')
             .notNullable()
             .references('project_id')
             .inTable('projects')
-            .onDelete('CASCADE')
-            .onUpdate('CASCADE') 
+            .onDelete('RESTRICT')
+            .onUpdate('RESTRICT') 
     }) 
 };
 
