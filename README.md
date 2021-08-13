@@ -21,11 +21,11 @@ In this project you will be given a set of requirements and must design a databa
 
 ### Files to Complete
 
-1. `package.json`
-2. `index.js`
-3. `api/server.js`
+1. `package.json` ✅
+2. `index.js` ✅
+3. `api/server.js` ✅
 4. `model.js` inside `api/project`, `api/resource` and `api/task`
-5. `router.js` inside `api/project`, `api/resource` and `api/task`
+5. `router.js` inside `api/project`, `api/resource` and `api/task` ✅
 6. migration file(s)
 7. seed file(s) **optional**
 
@@ -35,7 +35,7 @@ The project needs some additional NPM dependencies in order to work.
 
 ### Required Scripts
 
-Add `"start"`. `"server"`, `"migrate"` and `"rollback"` scripts to the `package.json` file.
+Add `"start"`. `"server"`, `"migrate"` and `"rollback"` scripts to the `package.json` file. ✅
 
 ### Required Tables
 
@@ -107,7 +107,7 @@ Build an API inside the `api` folder with endpoints for:
 - [-] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
 - [-] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
-## Interview Questions
+## Interview Questions ✅
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
