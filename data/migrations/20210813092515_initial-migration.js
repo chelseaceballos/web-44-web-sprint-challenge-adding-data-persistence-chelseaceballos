@@ -25,9 +25,9 @@ exports.up = async function(knex) {
             .onDelete('RESTRICT') // or 'CASCADE' if you'd want to be able to delete or update
             .onUpdate('RESTRICT')
     })
-    // .createTable('project_resources', table => {
-    //     table.increments()
-    // }) // Checking if SSH Key Works
+    .createTable('project_resources', table => {
+        table.increments()
+    }) 
 };
 
 exports.down = async function(knex) {
