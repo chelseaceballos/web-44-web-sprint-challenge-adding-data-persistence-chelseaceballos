@@ -1,9 +1,9 @@
-const projects = [
+const project = [
   {project_name: 'project name 1' ,project_description: 'project desc 1'},
   { project_name: 'project name 2', project_completed:true }
 ]
 
-const resources =[
+const resource =[
   { resource_name: 'resource 1' ,resource_description: 'resource description 1' },
   { resource_name: 'resource 2' ,resource_description: 'resource description 2' },
   { resource_name: 'resource 3' ,resource_description: 'resource description 3' },
@@ -14,7 +14,7 @@ const resources =[
 
 // ]
 
-const tasks = [
+const task = [
   // Project 1 tasks
   {task_description: "task desc 1", task_notes: "task notes", task_completed: true, project_id: 1 },
   {task_description: "task desc 2", task_notes: "task notes", task_completed: false, project_id: 1 },
@@ -28,7 +28,7 @@ const tasks = [
 
 
 exports.seed = async function (knex) { // tables with FKeys go last
-  await knex('projects').insert(projects)
-  await knex('resources').insert(resources)
-  await knex('tasks').insert(tasks)
+  await knex('project').insert(project)
+  await knex('resource').insert(resource)
+  await knex('task').insert(task)
 }
