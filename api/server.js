@@ -10,6 +10,9 @@ server.use(express.json())
  
 
 // catch all
+server.use('*', (req,res, next) => {
+    res.json({message: "Page Not Found"})
+})
 
 server.use('/api/projects', projectsRouter)
 server.use('/api/resources', resourcesRouter)
