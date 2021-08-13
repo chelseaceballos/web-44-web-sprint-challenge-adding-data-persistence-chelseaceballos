@@ -1,4 +1,4 @@
-const projects = [
+const projects = [ 
     {project_name: 'project name 1' ,project_description: 'project desc 1'},
     {project_name: 'project name 2', project_completed:true }
   ]
@@ -10,7 +10,7 @@ const projects = [
     { resource_name: 'resource 4' ,resource_description: 'resource description 4' },
   ]
   
-  const project_resource = [ 
+  const project_resources = [ 
     { project_id: 1, resource_id: 1},
     { project_id: 1, resource_id: 2 },
     { project_id: 2, resource_id: 3 },
@@ -33,5 +33,5 @@ const projects = [
     await knex('projects').insert(projects)
     await knex('resources').insert(resources)
     await knex('tasks').insert(tasks)
-   await knex('project_resources').insert(project_resource)
+   await knex('project_resources').insert(project_resources)
   }
