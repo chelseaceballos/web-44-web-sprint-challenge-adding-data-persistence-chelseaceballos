@@ -27,7 +27,7 @@ exports.up = async function(knex) {
     })
     // .createTable('project_resources', table => {
     //     table.increments()
-    // })
+    // }) // Checking if SSH Key Works
 };
 
 exports.down = async function(knex) {
