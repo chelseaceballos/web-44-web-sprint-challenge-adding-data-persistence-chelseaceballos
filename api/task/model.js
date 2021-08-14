@@ -2,8 +2,18 @@
 const db = require('../../data/dbConfig')
 
 function getAll() {
-    return db('tasks')
-}
+    return db('tasks as t')
+        .select('p.*', 't.*')
+        .leftJoin('projects as p', 'p.project_id', 't.project_id')
+        .then(data => {
+            return data.map(stuff => {
+                return {
+                    ...stuff,
+                    task_completed: stuff.task_completed ? true : false
+                }
+            })
+        })
+};
 
 function create(task) {
     return db('tasks').insert(task).then(task_id => {
