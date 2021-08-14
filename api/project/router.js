@@ -1,9 +1,21 @@
 // build your `/api/projects` router here
 const router = require('express').Router()
 const Project = require('./model')
+
+const hasName = async(req, res, next) => {
+try{
+const name = await(req.body.project_name)    
+if (!name) {
+    next({status:400, message: "project must have a name"})
+} else{
+    next()
+}
+} catch (err) {
+    next(err)
+}
+}
+
 //  [GET] /api/projects
-// Even though project_completed is stored as an integer, the API uses booleans when interacting with the client
-// Example of response body: [{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]
 router.get('/',  (req, res, next) => {
     Project.getAll()
     .then(proj => {
@@ -13,9 +25,8 @@ router.get('/',  (req, res, next) => {
  });
 
 // [POST] /api/projects
-// Even though project_completed is stored as an integer, the API uses booleans when interacting with the client
-// Example of response body: {"project_id":1,"project_name":"bar","project_description":null,"project_completed":false} // shows as 0 and 1
-router.post('/', (req, res, next) => {
+
+router.post('/', hasName, (req, res, next) => {
     Project.create(req.body)
     .then(data => {
         res.status(201).json(data)
