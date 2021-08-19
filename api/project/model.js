@@ -16,7 +16,6 @@ function getAll(){
 }
 
 function create(data) {
-    console.log(data);
     return db('projects').insert(data)
         .then(project_id => {
             return db('projects').where({project_id}).first()
